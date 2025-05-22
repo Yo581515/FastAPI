@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📘 My API Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      height: 70px;
+      background: linear-gradient(to right, #007acc, #005f99);
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 0 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header img {
+      height: 40px;
+      margin-right: 1rem;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    iframe {
+      display: block;
+      border: none;
+      width: 100vw;
+      height: calc(100vh - 70px);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png" alt="FastAPI Logo">
+    <h1>🚀 My FastAPI Developer Portal</h1>
+  </header>
+
+  <iframe src="http://127.0.0.1:9999/docs"></iframe>
+
+</body>
+</html>

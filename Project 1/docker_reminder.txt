@@ -1,0 +1,18 @@
+# cli run
+clear
+docker build -t fastapi-p1-temp:v1 .
+docker image prune -f
+docker run --rm -d -p 9999:8000 fastapi-p1-temp:v1
+
+docker ps
+docker ps -a
+
+# docker compose
+clear
+docker compose down
+docker image prune -f
+clear
+
+docker compose up -d --build
+docker image prune -f
+docker ps
