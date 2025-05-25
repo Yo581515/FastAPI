@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  project1:
+    build:
+      context: .
+    image: fastapi-p1-temp:v1
+    working_dir: /app
+    ports:
+      - "9999:8000"
+    volumes:
+      - .:/app 

@@ -8,7 +8,7 @@ docker ps
 docker ps -a
 
 # docker compose/ (Declarative)
-cd fastapi-the-complete-course/Project\ 1/
+cd fastapi-the-complete-course/Project\ 2/
 clear
 docker compose down
 docker image prune -f
