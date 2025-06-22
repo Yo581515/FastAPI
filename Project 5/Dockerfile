@@ -8,5 +8,6 @@ RUN pip install --upgrade pip
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-# pytest -v  test
-CMD [ "pytest", "-v", "TodoApp/test" ]
+
+# pytest -v
+CMD ["uvicorn", "TodoApp.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
