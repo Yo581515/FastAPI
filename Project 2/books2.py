@@ -120,3 +120,46 @@ async def delete_book(book_id: int = Path(gt=0)):
             break
     if not book_changed:
         raise HTTPException(status_code=404, detail='Item not found')
+
+
+
+
+
+#  Extra Challenge: Get books published between two dates (inclusive)
+from datetime import datetime, timezone
+
+@app.get("/books/published/", status_code=status.HTTP_200_OK)
+async def read_books_by_publish_date_range(
+    start_date: datetime = Query(
+        ...,
+        description="Start publication datetime (UTC). Example: 2027-01-01T00:00:00Z",
+        example="2027-01-01T00:00:00Z",
+    ),
+    end_date: datetime = Query(
+        ...,
+        description="End publication datetime (UTC). Example: 2029-12-31T23:59:59Z",
+        example="2029-12-31T23:59:59Z",
+    ),
+):
+    # Require timezone-aware datetimes (recommended)
+    if start_date.tzinfo is None or end_date.tzinfo is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="start_date and end_date must include timezone info (use Z for UTC).",
+        )
+
+    # Normalize to UTC
+    start_date = start_date.astimezone(timezone.utc)
+    end_date = end_date.astimezone(timezone.utc)
+
+    if end_date < start_date:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="end_date must be greater than or equal to start_date",
+        )
+
+    # Temporary: your BOOKS uses year as int
+    start_year = start_date.year
+    end_year = end_date.year
+
+    return [book for book in BOOKS if start_year <= book.published_date <= end_year]

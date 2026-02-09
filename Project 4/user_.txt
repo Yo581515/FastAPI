@@ -1,0 +1,22 @@
+uvicorn TodoApp.main:app --reload --port 9999
+
+
+curl -X 'POST' \
+  'http://127.0.0.1:9999/auth/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "yosafe80",
+  "email": "yosafe80@gmail.com",
+  "first_name": "yosafe80",
+  "last_name": "yosafe80 oqbamecail",
+  "password": "yosafe80",
+  "role": "admin",
+  "phone_number": "88888888"
+}'
+
+
+{
+  "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ5b3NhZmU4MCIsImlkIjoyLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE3NzA2MzMxMzd9.vImiSvh9jbJ1O81Gw4sFlhSxkJTrzs5tnIfSyH8wJ5k",
+  "token_type": "bearer"
+}
