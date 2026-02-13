@@ -1,0 +1,21 @@
+├── books_docs.html
+├── docker_reminder.txt
+├── docker-compose.yml
+├── Dockerfile
+├── generate_tree.sh
+├── requirements.txt
+├── TodoApp
+│   ├── __init__.py
+│   ├── __pycache__
+│   ├── database.py
+│   ├── main.py
+│   ├── models.py
+│   ├── routers
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   ├── admin.py
+│   │   ├── auth.py
+│   │   ├── todos.py
+│   │   ├── users.py
+│   ├── todosapp.db
+├── tree.txt

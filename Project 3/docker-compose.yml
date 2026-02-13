@@ -1,10 +1,9 @@
 version: '3.9'
 
 services:
-  project1:
+  project3:
     build:
       context: .
-    image: fastapi-p1-temp:v1
     working_dir: /app/TodoApp
     ports:
       - "9999:8000"

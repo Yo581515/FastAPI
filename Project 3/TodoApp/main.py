@@ -5,6 +5,7 @@ from routers import auth, todos, admin, users
 
 app = FastAPI()
 
+# create the database tables
 models.Base.metadata.create_all(bind=engine)
 
 app.include_router(auth.router) 
